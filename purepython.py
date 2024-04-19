@@ -11,3 +11,9 @@ def compute_pi(N):
         sum += f(x)*delta_x
     return sum*4
 
+if __name__ == "__main__":
+    import time
+    start_time = time.time()
+    print(compute_pi(1000000))
+    end_time = time.time()
+    print("Time taken: ", end_time - start_time)

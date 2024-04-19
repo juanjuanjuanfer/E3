@@ -31,3 +31,13 @@ def compute_pi_mpi(N):
     if rank == 0:
         pi_estimate = total_sum * 4
         return pi_estimate
+
+if __name__ == "__main__":
+    import time
+    start_time = time.time()
+    comm = MPI.COMM_WORLD
+    if comm.rank == 0:
+        print(compute_pi_mpi(1000000))
+    end_time = time.time()
+    if comm.rank == 0:
+        print("Time taken: ", end_time - start_time)

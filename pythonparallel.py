@@ -33,3 +33,11 @@ def parallel_compute_pi(N, num_processes):
     pi_estimate = sum(result.get() for result in results) * 4
     return pi_estimate
 
+if __name__ == "__main__":
+    import time
+    start_time = time.time()
+    a = parallel_compute_pi(1000000, 4)
+    end_time = time.time()
+    print(a)
+    print("Time taken: ", end_time - start_time)
+    
